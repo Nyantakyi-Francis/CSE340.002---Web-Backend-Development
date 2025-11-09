@@ -395,3 +395,232 @@ footer {
     font-size: 1.2rem;
   }
 }
+
+
+/* ========================================
+   INVENTORY CLASSIFICATION VIEW STYLES
+   ======================================== */
+
+/* Main Content Container */
+#inv-display {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+/* Page Title */
+#inv-display h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* Inventory Grid Container */
+#inv-display ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
+}
+
+/* Individual Inventory Item Card */
+#inv-display li {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+#inv-display li:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Vehicle Image Container */
+#inv-display .vehicle-image {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#inv-display .vehicle-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+#inv-display li:hover .vehicle-image img {
+  transform: scale(1.05);
+}
+
+/* Vehicle Details Container */
+#inv-display .namePrice {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Vehicle Name/Title */
+#inv-display .namePrice h2 {
+  font-size: 1.25rem;
+  color: #2c3e50;
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+}
+
+/* Vehicle Link */
+#inv-display .namePrice a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+#inv-display .namePrice a:hover h2 {
+  color: #3498db;
+}
+
+/* Price Display */
+#inv-display .namePrice span,
+#inv-display .namePrice .price {
+  font-size: 1.5rem;
+  color: #27ae60;
+  font-weight: 700;
+  display: block;
+  margin-top: auto;
+}
+
+/* Additional Vehicle Info (if present) */
+#inv-display .vehicle-info {
+  padding: 0 1.5rem 1rem;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+#inv-display .vehicle-info p {
+  margin: 0.25rem 0;
+}
+
+/* Message Block Styles */
+.notice,
+.message {
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.notice {
+  background-color: #fff3cd;
+  border: 1px solid #ffc107;
+  color: #856404;
+}
+
+.message {
+  background-color: #d4edda;
+  border: 1px solid #28a745;
+  color: #155724;
+}
+
+.error {
+  background-color: #f8d7da;
+  border: 1px solid #dc3545;
+  color: #721c24;
+}
+
+/* Empty State */
+.no-inventory {
+  text-align: center;
+  padding: 3rem;
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+/* Tablets */
+@media screen and (max-width: 768px) {
+  #inv-display {
+    padding: 1.5rem 1rem;
+  }
+
+  #inv-display h1 {
+    font-size: 1.75rem;
+  }
+
+  #inv-display ul {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+
+  #inv-display .namePrice {
+    padding: 1rem;
+  }
+
+  #inv-display .namePrice h2 {
+    font-size: 1.1rem;
+  }
+
+  #inv-display .namePrice span {
+    font-size: 1.3rem;
+  }
+}
+
+/* Mobile Phones */
+@media screen and (max-width: 480px) {
+  #inv-display {
+    padding: 1rem 0.5rem;
+  }
+
+  #inv-display h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  #inv-display ul {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  #inv-display .vehicle-image {
+    height: 180px;
+  }
+
+  #inv-display .namePrice {
+    padding: 0.75rem;
+  }
+
+  #inv-display .namePrice h2 {
+    font-size: 1rem;
+  }
+
+  #inv-display .namePrice span {
+    font-size: 1.2rem;
+  }
+}
+
+/* Large Screens */
+@media screen and (min-width: 1400px) {
+  #inv-display ul {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  }
+
+  #inv-display .vehicle-image {
+    height: 240px;
+  }
+}
