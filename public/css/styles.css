@@ -624,3 +624,600 @@ footer {
     height: 240px;
   }
 }
+
+
+/* ========================================
+   EPIC TEST DRIVE DISASTER ERROR PAGE
+   ======================================== */
+
+#error-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e22ce 100%);
+  padding: 2rem 1rem;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Animated Background Pattern */
+#error-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    repeating-linear-gradient(45deg,
+      transparent,
+      transparent 10px,
+      rgba(255, 255, 255, 0.03) 10px,
+      rgba(255, 255, 255, 0.03) 20px);
+  animation: slideBackground 20s linear infinite;
+}
+
+@keyframes slideBackground {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(28px);
+  }
+}
+
+.error-container {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* ========================================
+   CRASH HEADER
+   ======================================== */
+
+.crash-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.error-title {
+  font-size: 4rem;
+  color: #ff0000;
+  text-shadow:
+    0 0 10px #ff0000,
+    0 0 20px #ff0000,
+    0 0 30px #ff0000,
+    3px 3px 0 #000;
+  margin: 0;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+}
+
+.shake {
+  animation: shake 0.5s ease-in-out infinite;
+}
+
+@keyframes shake {
+
+  0%,
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+
+  25% {
+    transform: translateX(-5px) rotate(-2deg);
+  }
+
+  75% {
+    transform: translateX(5px) rotate(2deg);
+  }
+}
+
+/* ========================================
+   CRASH SCENE ANIMATION
+   ======================================== */
+
+.crash-scene {
+  position: relative;
+  height: 200px;
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.explosion {
+  font-size: 8rem;
+  position: absolute;
+  animation: explode 1s ease-out infinite;
+  filter: drop-shadow(0 0 20px rgba(255, 100, 0, 0.8));
+}
+
+@keyframes explode {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+}
+
+.car-crash {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.car {
+  font-size: 4rem;
+  animation: carCrash 2s ease-in-out infinite;
+  display: inline-block;
+}
+
+@keyframes carCrash {
+  0% {
+    transform: translateX(-300px) rotate(0deg);
+  }
+
+  45% {
+    transform: translateX(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateX(0) rotate(-15deg);
+  }
+
+  55% {
+    transform: translateX(10px) rotate(15deg);
+  }
+
+  60% {
+    transform: translateX(-10px) rotate(-10deg);
+  }
+
+  65% {
+    transform: translateX(5px) rotate(5deg);
+  }
+
+  70% {
+    transform: translateX(0) rotate(0deg);
+  }
+
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
+.smoke {
+  font-size: 2rem;
+  animation: smokeRise 2s ease-out infinite;
+  opacity: 0;
+}
+
+@keyframes smokeRise {
+  0% {
+    opacity: 0;
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-30px) scale(1.5);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-60px) scale(2);
+  }
+}
+
+.tire-rolling {
+  position: absolute;
+  font-size: 3rem;
+  animation: tireRoll 3s linear infinite;
+  right: -100px;
+}
+
+@keyframes tireRoll {
+  0% {
+    transform: translateX(-800px) rotate(0deg);
+  }
+
+  100% {
+    transform: translateX(800px) rotate(1080deg);
+  }
+}
+
+/* ========================================
+   ERROR MESSAGE BOX
+   ======================================== */
+
+.error-message-box {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  border: 3px solid #ff6b6b;
+  margin: 2rem 0;
+  position: relative;
+  animation: slideIn 0.6s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.crash-title {
+  color: #e74c3c;
+  font-size: 2rem;
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.main-message {
+  font-size: 1.3rem;
+  color: #2c3e50;
+  text-align: center;
+  margin: 1.5rem 0;
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+.main-message strong {
+  color: #e74c3c;
+  font-weight: 900;
+}
+
+/* ========================================
+   INCIDENT REPORT
+   ======================================== */
+
+.incident-report {
+  background: #fff3cd;
+  border-left: 5px solid #ffc107;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 8px;
+}
+
+.incident-report h3 {
+  color: #856404;
+  margin: 0 0 1rem 0;
+  font-size: 1.3rem;
+}
+
+.incident-report ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+}
+
+.incident-report li {
+  padding: 0.5rem 0;
+  color: #333;
+  font-size: 1.05rem;
+  border-bottom: 1px dashed #e0e0e0;
+}
+
+.incident-report li:last-child {
+  border-bottom: none;
+}
+
+.incident-report code {
+  background: #fff;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  color: #e74c3c;
+  font-family: 'Courier New', monospace;
+}
+
+.error-details {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 1rem;
+  border-radius: 6px;
+  margin: 1rem 0;
+  font-family: monospace;
+}
+
+/* ========================================
+   WITNESS STATEMENT
+   ======================================== */
+
+.witness-statement {
+  background: #e8f4f8;
+  border-left: 5px solid #17a2b8;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 8px;
+  font-style: italic;
+}
+
+.witness-statement p {
+  margin: 0.5rem 0;
+  color: #0c5460;
+}
+
+.witness {
+  text-align: right;
+  font-weight: 600;
+  font-style: normal;
+  color: #17a2b8;
+}
+
+.joke-message {
+  color: #555;
+  font-size: 1.1rem;
+  text-align: center;
+  margin: 2rem 0;
+  line-height: 1.8;
+  padding: 1.5rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+/* ========================================
+   WARNING TAPE
+   ======================================== */
+
+.warning-tape {
+  background: repeating-linear-gradient(45deg,
+      #ffeb3b,
+      #ffeb3b 20px,
+      #000 20px,
+      #000 40px);
+  color: #000;
+  font-weight: 900;
+  padding: 0.8rem;
+  text-align: center;
+  margin: 2rem -2.5rem;
+  animation: scrollTape 10s linear infinite;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  font-size: 1.1rem;
+  letter-spacing: 0.2em;
+}
+
+@keyframes scrollTape {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 56px 0;
+  }
+}
+
+/* ========================================
+   EMERGENCY ACTIONS
+   ======================================== */
+
+.emergency-actions {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+  padding: 2rem;
+  border-radius: 16px;
+  margin: 2rem 0;
+  box-shadow: 0 10px 30px rgba(238, 90, 111, 0.4);
+}
+
+.emergency-actions h3 {
+  color: #fff;
+  text-align: center;
+  margin: 0 0 1.5rem 0;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.action-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn span {
+  font-size: 1.5rem;
+}
+
+.btn-rescue {
+  background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+  color: white;
+}
+
+.btn-rescue:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(40, 167, 69, 0.5);
+}
+
+.btn-reverse {
+  background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+  color: white;
+}
+
+.btn-reverse:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(108, 117, 125, 0.5);
+}
+
+.btn-browse {
+  background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+  color: white;
+}
+
+.btn-browse:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 123, 255, 0.5);
+}
+
+/* ========================================
+   DISCLAIMER
+   ======================================== */
+
+.disclaimer {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+  margin: 2rem 0;
+  color: #fff;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.disclaimer strong {
+  color: #ffeb3b;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+.crash-footer {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.crash-footer p {
+  margin: 0.5rem 0;
+}
+
+.crash-footer strong {
+  color: #ffd700;
+  font-weight: 900;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media screen and (max-width: 768px) {
+  .error-title {
+    font-size: 3rem;
+  }
+
+  .crash-scene {
+    height: 150px;
+  }
+
+  .explosion {
+    font-size: 5rem;
+  }
+
+  .car {
+    font-size: 3rem;
+  }
+
+  .error-message-box {
+    padding: 1.5rem;
+  }
+
+  .crash-title {
+    font-size: 1.5rem;
+  }
+
+  .main-message {
+    font-size: 1.1rem;
+  }
+
+  .action-buttons {
+    grid-template-columns: 1fr;
+  }
+
+  .warning-tape {
+    font-size: 0.9rem;
+    margin: 2rem -1.5rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #error-page {
+    padding: 1rem 0.5rem;
+  }
+
+  .error-title {
+    font-size: 2.5rem;
+  }
+
+  .crash-scene {
+    height: 120px;
+  }
+
+  .explosion {
+    font-size: 4rem;
+  }
+
+  .car {
+    font-size: 2.5rem;
+  }
+
+  .error-message-box {
+    padding: 1rem;
+  }
+
+  .crash-title {
+    font-size: 1.3rem;
+  }
+
+  .main-message {
+    font-size: 1rem;
+  }
+
+  .incident-report,
+  .witness-statement {
+    padding: 1rem;
+  }
+}

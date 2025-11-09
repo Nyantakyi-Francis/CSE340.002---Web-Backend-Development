@@ -1,0 +1,123 @@
+<%- include('../partials/head') %>
+
+            <main id="error-page">
+                <div class="error-container">
+
+                    <!-- Epic Crash Header -->
+                    <div class="crash-header">
+                        <h1 class="error-title shake">
+                            <% if (title=='404' ) { %>
+                                🚨 404 🚨
+                                <% } else { %>
+                                    💥 <%= title %> 💥
+                                        <% } %>
+                        </h1>
+                    </div>
+
+                    <!-- Animated Crash Scene -->
+                    <div class="crash-scene">
+                        <div class="explosion">💥</div>
+                        <div class="car-crash">
+                            <span class="car">🚗</span>
+                            <span class="smoke">💨💨💨</span>
+                        </div>
+                        <div class="tire-rolling">🛞</div>
+                    </div>
+
+                    <!-- Hilarious Message -->
+                    <div class="error-message-box">
+                        <% if (title=='404' ) { %>
+                            <h2 class="crash-title">🏁 EPIC TEST DRIVE FAIL! 🏁</h2>
+                            <p class="main-message">
+                                "WOAH THERE, SPEED RACER! You just pulled a Fast & Furious move...
+                                straight into the <strong>VOID OF NON-EXISTENCE!</strong>"
+                            </p>
+                            <div class="incident-report">
+                                <h3>📋 Incident Report:</h3>
+                                <ul>
+                                    <li>✅ Driver tried to access: <code><%- message %></code></li>
+                                    <li>❌ Page location: <strong>BERMUDA TRIANGLE</strong></li>
+                                    <li>🔥 Damage assessment: <strong>TOTAL LOSS</strong></li>
+                                    <li>🎭 Driver status: <strong>EMBARRASSED</strong></li>
+                                    <li>🚑 Insurance claim: <strong>DENIED</strong></li>
+                                </ul>
+                            </div>
+                            <p class="joke-message">
+                                You took a wrong turn at Albuquerque, drove through the Matrix,
+                                hit a digital pothole, and landed in the page that time forgot!
+                                Even our GPS is laughing at us right now. 😂
+                            </p>
+                            <div class="witness-statement">
+                                <p><em>"I saw the whole thing! They were going at least 500 megabytes per second
+                                        when they hit that broken link. Never stood a chance!"</em></p>
+                                <p class="witness">- Anonymous Server Witness</p>
+                            </div>
+                            <% } else { %>
+                                <h2 class="crash-title">💥 CATASTROPHIC SYSTEM MELTDOWN! 💥</h2>
+                                <p class="main-message">
+                                    "HOLY TRANSMISSION FAILURE! Something went <strong>SPECTACULARLY WRONG</strong>
+                                    and we mean SPECTACULARLY!"
+                                </p>
+                                <div class="incident-report">
+                                    <h3>🔥 Critical Failure Report:</h3>
+                                    <p class="error-details"><%- message %></p>
+                                    <ul>
+                                        <li>⚠️ All systems: <strong>GOING HAYWIRE</strong></li>
+                                        <li>🤖 AI mechanics: <strong>CONFUSED & CRYING</strong></li>
+                                        <li>🔧 Repair estimate: <strong>3-5 BUSINESS ETERNITIES</strong></li>
+                                        <li>💸 Cost: <strong>YOUR SANITY</strong></li>
+                                    </ul>
+                                </div>
+                                <p class="joke-message">
+                                    Our servers just did a barrel roll, caught fire, exploded, and then apologized.
+                                    We're as shocked as you are! Someone definitely forgot to check the oil... or the
+                                    code...
+                                    or both. 🤦‍♂️
+                                </p>
+                                <% } %>
+                    </div>
+
+                    <!-- Warning Tape Animation -->
+                    <div class="warning-tape">
+                        ⚠️ CAUTION ⚠️ DIGITAL DEBRIS ⚠️ CAUTION ⚠️ DIGITAL DEBRIS ⚠️ CAUTION ⚠️
+                    </div>
+
+                    <!-- Emergency Actions -->
+                    <div class="emergency-actions">
+                        <h3>🚨 EMERGENCY EVACUATION OPTIONS:</h3>
+                        <div class="action-buttons">
+                            <a href="/" class="btn btn-rescue">
+                                <span>🏠</span>
+                                TELEPORT TO SAFETY (Home)
+                            </a>
+                            <a href="javascript:history.back()" class="btn btn-reverse">
+                                <span>⏪</span>
+                                REVERSE TIME (Go Back)
+                            </a>
+                            <a href="/inv" class="btn btn-browse">
+                                <span>🚗</span>
+                                BROWSE WORKING VEHICLES
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Funny Disclaimer -->
+                    <div class="disclaimer">
+                        <p><strong>⚡ DISCLAIMER:</strong> No actual vehicles or web pages were harmed in this crash.
+                            Your dignity, however, may have suffered minor damage. Side effects may include:
+                            confusion, laughter, and an overwhelming urge to check your URL bar.</p>
+
+                        <p style="margin-top: 1rem;">
+                            <em>If symptoms persist, please contact our support team. They're probably laughing too,
+                                but they'll help eventually.</em>
+                        </p>
+                    </div>
+
+                    <!-- Fun Footer -->
+                    <div class="crash-footer">
+                        <p>🎬 Brought to you by: <strong>Bad Navigation Decisions™</strong></p>
+                        <p>🏆 Achievement Unlocked: <strong>"Found the 404 Page!"</strong></p>
+                    </div>
+
+                </div>
+            </main>
