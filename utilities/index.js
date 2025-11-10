@@ -68,3 +68,39 @@ Util.buildClassificationGrid = async function(data){
   }
   return grid
 }
+
+/* **************************************
+* Build the vehicle detail view HTML
+* ************************************ */
+Util.buildVehicleDetail = async function(vehicle){
+  let detail = '<div id="vehicle-detail">'
+  
+  // Vehicle image
+  detail += '<div class="vehicle-image">'
+  detail += '<img src="' + vehicle.inv_image 
+  + '" alt="Image of ' + vehicle.inv_make + ' ' + vehicle.inv_model + '">'
+  detail += '</div>'
+  
+  // Vehicle information
+  detail += '<div class="vehicle-info">'
+  detail += '<h2>' + vehicle.inv_year + ' ' + vehicle.inv_make + ' ' + vehicle.inv_model + '</h2>'
+  
+  // Price
+  detail += '<p class="price"><strong>Price: $' 
+  + new Intl.NumberFormat('en-US').format(vehicle.inv_price) + '</strong></p>'
+  
+  // Description
+  detail += '<p class="description"><strong>Description:</strong> ' + vehicle.inv_description + '</p>'
+  
+  // Color
+  detail += '<p><strong>Color:</strong> ' + vehicle.inv_color + '</p>'
+  
+  // Mileage
+  detail += '<p><strong>Mileage:</strong> ' 
+  + new Intl.NumberFormat('en-US').format(vehicle.inv_miles) + ' miles</p>'
+  
+  detail += '</div>'
+  detail += '</div>'
+  
+  return detail
+}
