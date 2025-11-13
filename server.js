@@ -9,6 +9,7 @@ const session = require("express-session")
 const pool = require('./database/')
 const express = require("express")
 const expressLayouts = require("express-ejs-layouts")
+const bodyParser = require("body-parser")
 const env = require("dotenv").config()
 const app = express()
 const static = require("./routes/static")
@@ -32,6 +33,10 @@ const utilities = require("./utilities/")
   saveUninitialized: true,
   name: 'sessionId',
 }))
+
+// Body Parser Middleware
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
 
 
