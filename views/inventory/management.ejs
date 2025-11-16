@@ -1,0 +1,27 @@
+<% if (title) { %>
+    <h1>
+        <%= title %>
+    </h1>
+    <% } else { res.redirect('/') } %>
+
+        <%- messages() %>
+
+            <div class="management-container">
+                <h2>Inventory Management</h2>
+
+                <div class="management-links">
+                    <a href="/inv/add-classification" class="management-link">
+                        <div class="link-card">
+                            <h3>Add New Classification</h3>
+                            <p>Create a new vehicle classification category</p>
+                        </div>
+                    </a>
+
+                    <a href="/inv/add-inventory" class="management-link">
+                        <div class="link-card">
+                            <h3>Add New Vehicle</h3>
+                            <p>Add a new vehicle to the inventory</p>
+                        </div>
+                    </a>
+                </div>
+            </div>

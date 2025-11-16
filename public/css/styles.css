@@ -1432,3 +1432,101 @@ input:required:valid {
   font-weight: 500;
   margin: 0.5rem 0;
 }
+
+/* ===== Management View Styles ===== */
+.management-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.management-container h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
+}
+
+.management-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.management-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.link-card {
+  background: #f9f9f9;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.link-card:hover {
+  background: #e3f2fd;
+  border-color: #2196f3;
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.link-card h3 {
+  color: #2a7ae2;
+  margin-bottom: 1rem;
+}
+
+.link-card p {
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* ===== Form Notes and Links ===== */
+.form-note {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0.5rem 0;
+  font-style: italic;
+}
+
+.back-link {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.back-link a {
+  color: #2a7ae2;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.back-link a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Textarea Styles ===== */
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.form-group textarea:focus {
+  outline: none;
+  border-color: #2a7ae2;
+  box-shadow: 0 0 5px rgba(42, 122, 226, 0.3);
+}
+
+.form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
