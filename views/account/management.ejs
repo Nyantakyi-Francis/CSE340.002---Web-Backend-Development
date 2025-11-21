@@ -6,35 +6,14 @@
 
         <%- messages() %>
 
-            <div class="management-container">
-                <h2>Inventory Management</h2>
+            <div class="account-management">
+                <h2>Welcome! You're logged in.</h2>
+                <p>Manage your account settings and preferences here.</p>
 
-                <div class="management-links">
-                    <a href="/inv/add-classification" class="management-link">
-                        <div class="link-card">
-                            <h3>Add New Classification</h3>
-                            <p>Create a new vehicle classification category</p>
-                        </div>
-                    </a>
-
-                    <a href="/inv/add-inventory" class="management-link">
-                        <div class="link-card">
-                            <h3>Add New Vehicle</h3>
-                            <p>Add a new vehicle to the inventory</p>
-                        </div>
+                <div class="management-links" style="margin-top: 2rem;">
+                    <a href="/inv/" class="btn-primary"
+                        style="display: inline-block; padding: 1rem 2rem; text-decoration: none;">
+                        Go to Inventory Management
                     </a>
                 </div>
-
-                <hr>
-
-                <h2>Manage Inventory</h2>
-                <p>Choose a classification from the list to see the inventory items belonging to the classification.</p>
-
-                <%- classificationSelect %>
-
-                    <table id="inventoryDisplay"></table>
-
-                    <noscript>JavaScript must be enabled to use this page.</noscript>
             </div>
-
-            <script src="/js/inventory.js"></script>

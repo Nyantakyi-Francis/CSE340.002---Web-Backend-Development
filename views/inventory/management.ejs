@@ -24,4 +24,21 @@
                         </div>
                     </a>
                 </div>
+
+                <hr style="margin: 2rem 0; border: 2px solid #333;">
+
+                <h2 style="text-align: center;">Manage Inventory</h2>
+                <p style="text-align: center; margin-bottom: 1rem;">
+                    Choose a classification from the list to see the inventory items belonging to the classification.
+                </p>
+
+                <div style="text-align: center; margin: 2rem 0;">
+                    <%- classificationSelect %>
+                </div>
+
+                <table id="inventoryDisplay" style="width: 100%; margin-top: 2rem;"></table>
+
+                <noscript>JavaScript must be enabled to use this page.</noscript>
             </div>
+
+            <script src="/js/inventory.js"></script>

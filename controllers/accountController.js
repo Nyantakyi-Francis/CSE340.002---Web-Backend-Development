@@ -122,10 +122,13 @@ accountCont.accountLogin = async function (req, res) {
  * *************************************** */
 accountCont.buildAccountManagement = async function (req, res, next) {
   let nav = await utilities.getNav()
+  const classificationSelect = await utilities.buildClassificationList()
   res.render("account/management", {
     title: "Account Management",
     nav,
+    classificationSelect,
     errors: null,
   })
 }
+
 module.exports = accountCont
