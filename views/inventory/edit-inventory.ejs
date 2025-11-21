@@ -16,7 +16,7 @@
                 </ul>
                 <% } %>
 
-                    <form id="updateInventoryForm" action="/inv/update" method="post">
+                    <form id="updateForm" action="/inv/update" method="post">
 
                         <div class="form-group">
                             <label for="classificationList">Classification:</label>
@@ -48,12 +48,14 @@
                         <div class="form-group">
                             <label for="inv_image">Image Path:</label>
                             <input type="text" id="inv_image" name="inv_image" value="<%= locals.inv_image %>" required>
+                            <p class="form-note">Use /images/vehicles/no-image.png if no image available</p>
                         </div>
 
                         <div class="form-group">
                             <label for="inv_thumbnail">Thumbnail Path:</label>
                             <input type="text" id="inv_thumbnail" name="inv_thumbnail"
                                 value="<%= locals.inv_thumbnail %>" required>
+                            <p class="form-note">Use /images/vehicles/no-image-tn.png if no image available</p>
                         </div>
 
                         <div class="form-group">
@@ -73,12 +75,15 @@
                             <input type="text" id="inv_color" name="inv_color" value="<%= locals.inv_color %>" required>
                         </div>
 
-                        <!-- Hidden input for inv_id -->
-                        <input type="hidden" name="inv_id" value="<%= locals.inv_id %>">
+                        <button type="submit" class="btn-primary" disabled>Update Vehicle</button>
 
-                        <button type="submit" class="btn-primary">Update Vehicle</button>
+                        <!-- Hidden input for inv_id -->
+                        <input type="hidden" name="inv_id" <% if(locals.inv_id) { %> value="<%= locals.inv_id %>"
+                            <% } %>>
                     </form>
 
                     <p class="back-link">
                         <a href="/inv/">Back to Management</a>
                     </p>
+
+                    <script src="/js/inv-update.js"></script>
