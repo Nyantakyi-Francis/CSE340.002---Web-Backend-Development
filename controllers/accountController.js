@@ -128,6 +128,4 @@ accountCont.buildAccountManagement = async function (req, res, next) {
     errors: null,
   })
 }
-
-
 module.exports = accountCont
