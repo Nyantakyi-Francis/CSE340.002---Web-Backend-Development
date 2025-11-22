@@ -131,4 +131,15 @@ accountCont.buildAccountManagement = async function (req, res, next) {
   })
 }
 
+
+
+/* ****************************************
+ *  Process logout
+ * *************************************** */
+accountCont.accountLogout = async function (req, res, next) {
+  res.clearCookie("jwt")
+  req.flash("notice", "You have been logged out.")
+  res.redirect("/")
+}
+
 module.exports = accountCont

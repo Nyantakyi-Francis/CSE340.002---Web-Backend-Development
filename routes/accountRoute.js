@@ -5,7 +5,7 @@ const accountController = require("../controllers/accountController")
 const utilities = require("../utilities/")
 const regValidate = require('../utilities/account-validation')
 
-// Default account route - PROTECTED (requires login)
+// Default account route - PROTECTED
 router.get("/", utilities.checkLogin, utilities.handleErrors(accountController.buildAccountManagement));
 
 // Route to build login view
@@ -29,5 +29,8 @@ router.post(
   regValidate.checkLoginData,
   utilities.handleErrors(accountController.accountLogin)
 )
+
+// Logout route
+router.get("/logout", utilities.handleErrors(accountController.accountLogout));
 
 module.exports = router;
