@@ -7,13 +7,21 @@
         <%- messages() %>
 
             <div class="account-management">
-                <h2>Welcome! You're logged in.</h2>
-                <p>Manage your account settings and preferences here.</p>
+                <h2>Welcome <%= locals.accountData.account_firstname %>!</h2>
 
-                <div class="management-links" style="margin-top: 2rem;">
-                    <a href="/inv/" class="btn-primary"
-                        style="display: inline-block; padding: 1rem 2rem; text-decoration: none;">
-                        Go to Inventory Management
+                <p class="account-links">
+                    <a href="/account/update/<%= locals.accountData.account_id %>" class="btn-link">
+                        Update Account Information
                     </a>
-                </div>
+                </p>
+
+                <% if (locals.accountData.account_type==='Employee' || locals.accountData.account_type==='Admin' ) { %>
+                    <h3>Inventory Management</h3>
+                    <p>
+                        <a href="/inv/" class="btn-primary"
+                            style="display: inline-block; padding: 1rem 2rem; text-decoration: none;">
+                            Manage Inventory
+                        </a>
+                    </p>
+                    <% } %>
             </div>

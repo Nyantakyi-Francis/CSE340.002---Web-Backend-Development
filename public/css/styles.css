@@ -1626,3 +1626,77 @@ noscript {
 #tools a:hover {
   background-color: rgba(255, 255, 255, 0.2);
 }
+/* ===== Account Management Styles ===== */
+.account-management {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.account-management h2 {
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.account-management h3 {
+  color: #2a7ae2;
+  margin: 2rem 0 1rem 0;
+}
+
+.account-links {
+  margin: 1.5rem 0;
+}
+
+.btn-link {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #2a7ae2;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.btn-link:hover {
+  background-color: #1e5fb8;
+}
+
+
+/* ===== Account Update View Styles ===== */
+.account-update-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.update-section {
+  background: #f9f9f9;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.update-section h2 {
+  margin-top: 0;
+  color: #333;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #2a7ae2;
+  padding-bottom: 0.5rem;
+}
+
+.password-note {
+  background-color: #e3f2fd;
+  border-left: 4px solid #2196f3;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.password-note strong {
+  display: block;
+  margin-top: 0.5rem;
+  color: #1565c0;
+}

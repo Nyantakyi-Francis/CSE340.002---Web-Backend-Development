@@ -1,0 +1,98 @@
+<% if (title) { %>
+    <h1>
+        <%= title %>
+    </h1>
+    <% } else { res.redirect('/') } %>
+
+        <%- messages() %>
+
+            <% if (errors) { %>
+                <ul class="notice">
+                    <% errors.array().forEach(error=> { %>
+                        <li>
+                            <%= error.msg %>
+                        </li>
+                        <% }) %>
+                </ul>
+                <% } %>
+
+                    <div class="account-update-container">
+
+                        <!-- Account Information Update Form -->
+                        <div class="update-section">
+                            <h2>Update Account Information</h2>
+                            <form id="updateAccountForm" action="/account/update" method="post">
+
+                                <div class="form-group">
+                                    <label for="account_firstname">First Name:</label>
+                                    <input type="text" id="account_firstname" name="account_firstname"
+                                        value="<%= locals.account_firstname %>" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="account_lastname">Last Name:</label>
+                                    <input type="text" id="account_lastname" name="account_lastname"
+                                        value="<%= locals.account_lastname %>" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="account_email">Email Address:</label>
+                                    <input type="email" id="account_email" name="account_email"
+                                        value="<%= locals.account_email %>" required>
+                                </div>
+
+                                <!-- Hidden account_id -->
+                                <input type="hidden" name="account_id" value="<%= locals.account_id %>">
+
+                                <button type="submit" class="btn-primary">Update Account</button>
+                            </form>
+                        </div>
+
+                        <!-- Password Change Form -->
+                        <div class="update-section">
+                            <h2>Change Password</h2>
+                            <p class="password-note">
+                                Enter a new password to change your current password.
+                                <strong>Password Requirements:</strong> Must be at least 12 characters
+                                and contain at least 1 capital letter, 1 number, and 1 special character.
+                            </p>
+
+                            <form id="changePasswordForm" action="/account/change-password" method="post">
+
+                                <div class="form-group">
+                                    <label for="account_password">New Password:</label>
+                                    <input type="password" id="account_password" name="account_password" required
+                                        pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$">
+                                    <span class="password-toggle" id="passwordToggle">Show Password</span>
+                                </div>
+
+                                <!-- Hidden account_id -->
+                                <input type="hidden" name="account_id" value="<%= locals.account_id %>">
+
+                                <button type="submit" class="btn-primary">Change Password</button>
+                            </form>
+                        </div>
+
+                    </div>
+
+                    <p class="back-link">
+                        <a href="/account/">Back to Account Management</a>
+                    </p>
+
+                    <script>
+                        // Show/Hide Password Toggle
+                        const passwordInput = document.getElementById('account_password');
+                        const passwordToggle = document.getElementById('passwordToggle');
+
+                        if (passwordToggle) {
+                            passwordToggle.addEventListener('click', function () {
+                                if (passwordInput.type === 'password') {
+                                    passwordInput.type = 'text';
+                                    passwordToggle.textContent = 'Hide Password';
+                                } else {
+                                    passwordInput.type = 'password';
+                                    passwordToggle.textContent = 'Show Password';
+                                }
+                            });
+                        }
+                    </script>
