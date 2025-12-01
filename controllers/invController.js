@@ -42,10 +42,21 @@ invCont.buildByInventoryId = async function (req, res, next) {
   const detail = await utilities.buildVehicleDetail(data)
   let nav = await utilities.getNav()
   const vehicleName = `${data.inv_year} ${data.inv_make} ${data.inv_model}`
+  
+  // Get reviews and rating for this vehicle
+  const reviewModel = require("../models/review-model")
+  const reviews = await reviewModel.getReviewsByVehicle(inv_id)
+  const ratingData = await reviewModel.getAverageRating(inv_id)
+  
   res.render("./inventory/detail", {
     title: vehicleName,
     nav,
     detail,
+    inv_id: data.inv_id,
+    reviews,
+    averageRating: ratingData.average ? parseFloat(ratingData.average).toFixed(1) : 0,
+    reviewCount: ratingData.count,
+    utilities: utilities 
   })
 }
 

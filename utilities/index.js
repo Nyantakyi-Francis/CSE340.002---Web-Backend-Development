@@ -177,4 +177,49 @@ Util.checkAccountType = (req, res, next) => {
 }
 
 
+/* **************************************
+* Build the reviews display HTML
+* ************************************ */
+Util.buildReviewsDisplay = function(reviews) {
+  if (!reviews || reviews.length === 0) {
+    return '<p class="no-reviews">No reviews yet. Be the first to review this vehicle!</p>'
+  }
+  
+  let html = '<div class="reviews-list">'
+  
+  reviews.forEach(review => {
+    const date = new Date(review.review_date).toLocaleDateString()
+    const stars = '★'.repeat(review.review_rating) + '☆'.repeat(5 - review.review_rating)
+    
+    html += `
+      <div class="review-item">
+        <div class="review-header">
+          <span class="review-author">${review.account_firstname} ${review.account_lastname}</span>
+          <span class="review-rating">${stars}</span>
+          <span class="review-date">${date}</span>
+        </div>
+        <p class="review-text">${review.review_text}</p>
+      </div>
+    `
+  })
+  
+  html += '</div>'
+  return html
+}
+
+/* **************************************
+* Build star rating display
+* ************************************ */
+Util.buildStarRating = function(rating) {
+  const fullStars = Math.floor(rating)
+  const hasHalfStar = rating % 1 >= 0.5
+  const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0)
+  
+  let stars = '★'.repeat(fullStars)
+  if (hasHalfStar) stars += '⯨'
+  stars += '☆'.repeat(emptyStars)
+  
+  return stars
+}
+
 module.exports = Util
