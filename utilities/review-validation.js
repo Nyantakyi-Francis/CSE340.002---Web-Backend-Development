@@ -21,17 +21,6 @@ validate.reviewRules = () => {
       .notEmpty()
       .isLength({ min: 10, max: 500 })
       .withMessage("Review must be between 10 and 500 characters."),
-
-    // Check if user already reviewed this vehicle
-    body("inv_id")
-      .custom(async (inv_id, { req }) => {
-        if (req.body.account_id) {
-          const alreadyReviewed = await reviewModel.checkExistingReview(inv_id, req.body.account_id)
-          if (alreadyReviewed) {
-            throw new Error("You have already reviewed this vehicle.")
-          }
-        }
-      }),
   ]
 }
 
@@ -39,14 +28,22 @@ validate.reviewRules = () => {
  * Check review data and return errors
  * ***************************** */
 validate.checkReviewData = async (req, res, next) => {
-  const { inv_id } = req.body
+  const { inv_id, account_id } = req.body
   let errors = []
   errors = validationResult(req)
+  
+  // Check for duplicate review
+  const alreadyReviewed = await reviewModel.checkExistingReview(inv_id, account_id)
+  if (alreadyReviewed) {
+    req.flash("notice", "You have already reviewed this vehicle.")
+    return res.redirect(`/inv/detail/${inv_id}`)
+  }
+  
   if (!errors.isEmpty()) {
-    // Redirect back to vehicle detail page with errors
     req.flash("notice", "Please correct the errors in your review.")
     return res.redirect(`/inv/detail/${inv_id}`)
   }
+  
   next()
 }
 
